@@ -8,12 +8,21 @@ const Header = () => {
       <h1 className="main-heading">Contact Manager</h1>
       <ul className="menu">
         <li>
-          <NavLink to="/" className="menu-item" exact>
+          <NavLink
+            to="/"
+            className="menu-item"
+            activeClassName="highlight"
+            exact
+          >
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/addContact" className="menu-item">
+          <NavLink
+            to="/addContact"
+            className="menu-item"
+            activeClassName="highlight"
+          >
             Add Contact
           </NavLink>
         </li>

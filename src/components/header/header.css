@@ -12,7 +12,6 @@
   gap: 1rem;
 }
 
-.active {
+.highlight {
   font-weight: bold;
-  color: orange;
 }

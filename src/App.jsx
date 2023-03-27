@@ -76,7 +76,8 @@ function App() {
                 />
               )}
             />
-            <Route render={() => <Redirect to="/" />} />
+
+            <Route component={PageNotFound} />
           </Switch>
         </div>
       </BrowserRouter>
