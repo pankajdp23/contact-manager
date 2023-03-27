@@ -29,6 +29,7 @@ function App() {
   };
 
   const deleteContact = (id) => {
+    // test commit
     // console.log('filter', contacts.filter(contact => contact.id !== id));
     setContacts(contacts.filter((contact) => contact.id !== id));
   };
