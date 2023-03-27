@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./header.css";
 
 const Header = () => {
@@ -8,14 +8,14 @@ const Header = () => {
       <h1 className="main-heading">Contact Manager</h1>
       <ul className="menu">
         <li>
-          <Link to="/" className="menu-item">
+          <NavLink to="/" className="menu-item" exact>
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/addContact" className="menu-item">
+          <NavLink to="/addContact" className="menu-item">
             Add Contact
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </>
