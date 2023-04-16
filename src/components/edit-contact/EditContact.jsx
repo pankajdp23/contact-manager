@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import UserContactForm from "../contact-form/ContactForm";
 
 const EditContact = ({ updateContact, contacts, match }) => {
@@ -9,7 +9,7 @@ const EditContact = ({ updateContact, contacts, match }) => {
   const contactToEdit = contacts.find((contact) => contact.id === +id);
 
   if (!contactToEdit) {
-    return <Redirect to="/" />;
+    return <Navigate to="/" />;
   }
 
   const handleSubmit = (id, contact) => {

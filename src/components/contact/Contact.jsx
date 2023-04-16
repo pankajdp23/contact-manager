@@ -1,6 +1,6 @@
 import React from "react";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./contact.css";
 
 const Contact = ({
@@ -11,7 +11,7 @@ const Contact = ({
   updateContact,
   deleteContact,
 }) => {
-  const history = useHistory();
+  const navigate = useNavigate();
   return (
     <tr key={phoneNumber}>
       <td>{firstName}</td>
@@ -21,7 +21,7 @@ const Contact = ({
         <AiFillEdit
           size={25}
           className="icon"
-          onClick={() => history.push(`/edit/${id}`)}
+          onClick={() => navigate(`/edit/${id}`)}
         />
       </td>
       <td>

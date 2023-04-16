@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const initialState = {
   firstName: "",
@@ -10,7 +10,7 @@ const initialState = {
 
 const UserContactForm = (props) => {
   //console.log(props);
-  const history = useHistory();
+  const navigate = useNavigate();
   const { state = {} } = useLocation();
   console.log("state", state);
   const { addContact, contactToEdit, handleSubmit, contacts } = props;
@@ -58,7 +58,7 @@ const UserContactForm = (props) => {
           });
         }
         setContact(initialState);
-        history.push("/");
+        navigate("/");
       } else {
         setErrorMsg("Please enter a valid 10 digit phone number.");
       }

@@ -10,9 +10,9 @@ const Header = () => {
         <li>
           <NavLink
             to="/"
-            className="menu-item"
-            activeClassName="highlight"
-            exact
+            className={({ isActive }) =>
+              isActive ? "menu-item highlight" : "menu-item"
+            }
           >
             Home
           </NavLink>
@@ -20,8 +20,9 @@ const Header = () => {
         <li>
           <NavLink
             to="/addContact"
-            className="menu-item"
-            activeClassName="highlight"
+            className={({ isActive }) =>
+              isActive ? "menu-item highlight" : "menu-item"
+            }
           >
             Add Contact
           </NavLink>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import ContactForm from "./components/contact-form/ContactForm";
 import EditContact from "./components/edit-contact/EditContact";
@@ -48,37 +48,44 @@ function App() {
       <BrowserRouter>
         <Header />
         <div className="container">
-          <Switch>
+          <Routes>
             <Route
               path="/"
-              render={(props) => (
+              element={
+                <Home contacts={contacts} deleteContact={deleteContact} />
+              }
+              /* render={(props) => (
                 <Home
                   {...props}
                   contacts={contacts}
                   deleteContact={deleteContact}
                 />
-              )}
-              exact
+              )}*/
+              // exact
             />
             <Route
               path="/addContact"
-              render={(props) => (
-                <ContactForm {...props} addContact={addContact} />
-              )}
+              element={<ContactForm addContact={addContact} />}
             />
             <Route
               path="/edit/:id" // URL parameters
-              render={(props) => (
+              element={
+                <EditContact
+                  updateContact={updateContact}
+                  contacts={contacts}
+                />
+              }
+              /* render={(props) => (
                 <EditContact
                   {...props}
                   updateContact={updateContact}
                   contacts={contacts}
                 />
-              )}
+              )} */
             />
 
-            <Route component={PageNotFound} />
-          </Switch>
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
         </div>
       </BrowserRouter>
     </div>
